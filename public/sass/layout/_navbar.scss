@@ -1,0 +1,51 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - (2 * $section-margin-lr));
+    margin: 0 $section-margin-lr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:$primary-color;
+    background-color:rgba(33, 33, 33, 0.9);
+    z-index: 999;
+    height: 90px;
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        gap: 18px;
+        list-style-type: none;
+        &__item{
+            position: relative;
+            height: 100%;
+            &:after{
+                content: " ";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 1px;
+                width: 100%;
+                background-color: #14FFEC;
+                transform: scaleX(0);
+                transition: transform 500ms;
+                transform-origin: 100%;
+            }
+            &:hover{
+                &:after{
+                    transform: scaleX(1);
+                }
+            }
+            &__link{
+                text-decoration: none;
+                color: $primary-color;
+                transition: color 300ms;
+                
+                &:hover{
+                    color:$secondary-color;
+                }
+            }
+        }
+    }
+}
