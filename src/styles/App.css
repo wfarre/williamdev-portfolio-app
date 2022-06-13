@@ -176,7 +176,7 @@ body {
 }
 .section--about .list--technology {
   display: flex;
-  width: 100%;
+  width: calc(100% - 40px);
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: left;
@@ -257,6 +257,7 @@ body {
 @media all and (max-width: 660px) {
   .card {
     width: calc(100% - 20px);
+    align-self: center;
   }
 }
 .card:hover {
@@ -314,6 +315,11 @@ body {
 
 .card:nth-child(2n) {
   align-self: flex-end;
+}
+@media all and (max-width: 660px) {
+  .card:nth-child(2n) {
+    align-self: center;
+  }
 }
 
 .container {

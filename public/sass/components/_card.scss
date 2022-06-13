@@ -12,6 +12,7 @@
     text-decoration: none;
     @include mobile-only{
         width: calc(100% - 2 * 10px);
+        align-self: center;
 
     }
     &:hover{
@@ -82,4 +83,7 @@
 
 .card:nth-child(2n){
     align-self: flex-end;
+    @include mobile-only{
+        align-self: center;
+    }
 }
