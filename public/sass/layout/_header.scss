@@ -2,6 +2,11 @@
     width: calc(100% - (2 * $section-margin-lr));
     margin: 50px $section-margin-lr;
     margin-top: 170px;
+    @include tablet-only{
+        text-align: center;
+        width: calc(100% - ($section-margin-lr-mobile * 2));
+        margin: 50px $section-margin-lr-mobile;
+    }
     &__hello{
         color: #0D7377;
         color: $decoration-primary;
@@ -14,7 +19,6 @@
         font-weight: 500;
         margin: 0;
         color: $secondary-color;
-        // color: #0D7377;
         line-height: 1.25;
         &--sub{
             font-size: 70px;

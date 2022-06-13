@@ -1,0 +1,85 @@
+.card{
+    width: calc(90% - 2 * 10px);
+    height: fit-content;
+    min-height: 200px;
+    padding: 10px 10px;
+    border: solid 2px $primary-color;
+    border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    transition: border-color 500ms;
+    text-decoration: none;
+    @include mobile-only{
+        width: calc(100% - 2 * 10px);
+
+    }
+    &:hover{
+        border-color: $secondary-color;
+        cursor: pointer;
+
+        .card__body{
+            &__header{
+                &__title{
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+    .image-wrapper{
+        position: relative;
+        height: 180px;
+        width: 30%;
+        // background-color: #FF66CC;
+        border-radius: 15px;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit:scale-down;
+        }
+    }
+    &__body{
+        width:70%;
+        color: $font-primary;
+    
+        &__header{
+            &__title{
+                font-size: 20px;
+                margin: 0;
+                margin-bottom: 10px;
+                color: $primary-color;
+                transition: color 500ms;
+            }
+            &__tags{
+                .tag-list{
+                    list-style-type: none;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin: 0;
+                    padding: 0;
+
+                    li{
+                        font-size: 13px;
+                        font-weight: 500;
+                        color: #0D7377;
+                        background-color: $secondary-color;
+                        border-radius: 20px;
+                        padding: 2px 5px;
+                    }
+                }
+            }
+        }
+        &__content{
+            margin-top: 20px;
+        }
+    }
+}
+
+.card:nth-child(2n){
+    align-self: flex-end;
+}

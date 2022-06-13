@@ -8,6 +8,7 @@
     border: 1px solid $secondary-color;
     border-radius: 5px;
     transition: all 500ms;
+    text-decoration: none;
     &:hover{
         cursor: pointer;
         background-color: $secondary-color;

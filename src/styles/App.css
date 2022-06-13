@@ -2,28 +2,51 @@ body {
   background-color: #212121;
   color: #E5E5E5;
   font-family: "Roboto Mono", monospace;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
-
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 84%;
-  margin: 0 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 16%);
+  height: 90px;
+  margin: 0;
+  padding: 0 8%;
   color: #0D7377;
   background-color: rgba(33, 33, 33, 0.9);
   z-index: 999;
-  height: 90px;
+}
+@media all and (max-width: 660px) {
+  .nav .logo-wrapper {
+    width: 30%;
+  }
+}
+@media all and (max-width: 660px) {
+  .nav .logo-wrapper h2 {
+    font-size: 16px;
+  }
 }
 .nav .navbar {
   display: flex;
   justify-content: space-between;
-  width: 40%;
-  gap: 18px;
+  width: fit-content;
+  min-width: 40%;
+  gap: 3%;
   list-style-type: none;
+  padding: 0;
+}
+@media all and (max-width: 660px) {
+  .nav .navbar {
+    font-size: 12px;
+    min-width: none;
+  }
 }
 .nav .navbar__item {
   position: relative;
@@ -52,11 +75,25 @@ body {
 .nav .navbar__item__link:hover {
   color: #14FFEC;
 }
+@media all and (max-width: 830px) {
+  .nav {
+    position: relative;
+    width: 96%;
+    padding: 0 2%;
+  }
+}
 
 .header {
   width: 84%;
   margin: 50px 8%;
   margin-top: 170px;
+}
+@media all and (max-width: 830px) {
+  .header {
+    text-align: center;
+    width: 96%;
+    margin: 50px 2%;
+  }
 }
 .header__hello {
   color: #0D7377;
@@ -90,6 +127,12 @@ body {
   width: 84%;
   margin: 50px 8%;
 }
+@media all and (max-width: 830px) {
+  .section {
+    width: 96%;
+    margin: 50px 2%;
+  }
+}
 .section--right {
   display: flex;
   justify-content: flex-end;
@@ -100,6 +143,11 @@ body {
 }
 .section .section__body {
   width: 50%;
+}
+@media all and (max-width: 830px) {
+  .section .section__body {
+    width: 100%;
+  }
 }
 .section .section__body__header {
   width: 100%;
@@ -112,9 +160,19 @@ body {
   position: relative;
   width: 100%;
 }
+@media all and (max-width: 660px) {
+  .section .section__body__content {
+    text-align: center;
+  }
+}
 
 .section--about .section__body__header {
   text-align: right;
+}
+@media all and (max-width: 660px) {
+  .section--about .section__body__header {
+    text-align: center;
+  }
 }
 .section--about .list--technology {
   display: flex;
@@ -128,18 +186,41 @@ body {
 }
 
 .section--portfolio .section__body {
-  width: 60%;
+  width: 80%;
+}
+@media all and (max-width: 830px) {
+  .section--portfolio .section__body {
+    width: 90%;
+  }
+}
+@media all and (max-width: 660px) {
+  .section--portfolio .section__body {
+    width: 100%;
+  }
 }
 
 .section--contact {
   text-align: right;
   height: 400px;
 }
+@media all and (max-width: 660px) {
+  .section--contact {
+    text-align: center;
+  }
+}
 .section--contact .section__body__content {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.footer {
+  height: 30px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .btn {
@@ -152,6 +233,7 @@ body {
   border: 1px solid #14FFEC;
   border-radius: 5px;
   transition: all 500ms;
+  text-decoration: none;
 }
 .btn:hover {
   cursor: pointer;
@@ -161,7 +243,8 @@ body {
 
 .card {
   width: calc(90% - 20px);
-  height: 180px;
+  height: fit-content;
+  min-height: 200px;
   padding: 10px 10px;
   border: solid 2px #0D7377;
   border-radius: 15px;
@@ -170,6 +253,11 @@ body {
   gap: 20px;
   transition: border-color 500ms;
   text-decoration: none;
+}
+@media all and (max-width: 660px) {
+  .card {
+    width: calc(100% - 20px);
+  }
 }
 .card:hover {
   border-color: #14FFEC;
@@ -180,7 +268,7 @@ body {
 }
 .card .image-wrapper {
   position: relative;
-  height: 100%;
+  height: 180px;
   width: 30%;
   border-radius: 15px;
 }
@@ -207,6 +295,7 @@ body {
   list-style-type: none;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 10px;
   margin: 0;
   padding: 0;
@@ -239,27 +328,34 @@ body {
   justify-content: space-between;
 }
 
+#root {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+#root .App {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 .decoration {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@media all and (max-width: 660px) {
+  .decoration {
+    display: none;
+  }
+}
 .decoration__text {
   font-family: "Train One", cursive;
   color: #FF66CC;
   text-shadow: 12px 12px 60px #FF66CC;
-  -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   font-size: 70px;
-}
-
-.footer {
-  height: 30px;
-  width: 100%;
-  display: inline-flex;
-  justify-content: center;
-  font-size: 14px;
 }
 
 /*# sourceMappingURL=App.css.map */
